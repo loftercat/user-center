@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: user-center
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/su
+    username: root
+    password: mysql.com
+  #session过期时间
+  session:
+    timeout: 86400
+
+server:
+  port: 8080
+
+# MyBatis Plus configuration
+mybatis-plus:
+  configuration:
+    #驼峰转下划线开关
+    map-underscore-to-camel-case: false
+    #sql打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除字段名(deleted为实体类属性名称)
+      logic-delete-value: 1 # 逻辑已删除值。可选，默认值为 1
+      logic-not-delete-value: 0 # 逻辑未删除值。可选，默认值为 0
